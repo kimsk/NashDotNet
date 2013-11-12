@@ -1,5 +1,5 @@
-NashDotNet
-==========
+WinRT and Caliburn.Micro 
+========================
 
 Code and PowerPoint slides from my "WinRT and Caliburn.Micro" talk at Nashville .NET User group meeting on November 14, 2013.
 
