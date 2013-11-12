@@ -1,0 +1,186 @@
+﻿<UserControl
+    x:Class="InstantBingo.Views.BallCallsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:micro="using:Caliburn.Micro"
+    xmlns:samples="using:InstantBingo.Samples"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="700"
+    d:DataContext="{d:DesignInstance Type=samples:BallCallViewModelSample, IsDesignTimeCreatable=True}"
+    micro:Bind.AtDesignTime="True">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="36" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />            
+        </Style>
+        <Style TargetType="ContentControl">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="ContentTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Grid Width="40" Height="40">
+                            <Ellipse Visibility="{Binding BallCallStatus, Converter={StaticResource CalledBallCallStatusToVisibility}}"
+                                     Width="35" Height="35">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="ms-appx:///Assets/blueball.PNG"></ImageBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <Ellipse Visibility="{Binding BallCallStatus, Converter={StaticResource InPatternBallCallStatusToVisibility}}"
+                                     Width="40" Height="40">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="ms-appx:///Assets/redball.PNG"></ImageBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <TextBlock Text="{Binding Number}"
+                                       Foreground="White" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>       
+    </UserControl.Resources>
+    <Grid x:Name="HasBallCalls">
+        <Border Width="700" Background="{StaticResource ContentBackgroundColorBrush}" Opacity="0.5"/>
+        <Border Width="700">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="0" Background="#FF0051FF">
+        		<TextBlock>
+        			<Run Text="B"/>
+        		</TextBlock>
+        	</Border>
+            <Border Grid.Row="1" Background="Lime">
+            	<TextBlock>
+            		<Run Text="I"/>
+            	</TextBlock>
+            </Border>
+            <Border Grid.Row="2" Background="#FFFFAE00">
+            	<TextBlock>
+            		<Run Text="N"/>
+            	</TextBlock>
+            </Border>
+            <Border Grid.Row="3" Background="Red">
+            	<TextBlock>
+            		<Run Text="G"/>
+            	</TextBlock>
+            </Border>
+            <Border Grid.Row="4" Background="#FFAE00FF">
+            	<TextBlock>
+            		<Run Text="O"/>
+            	</TextBlock>
+            </Border>
+            <ContentControl  DataContext="{Binding BallCalls[0]}" Grid.Row="0" Grid.Column="1"/>
+            <ContentControl  DataContext="{Binding BallCalls[1]}" Grid.Row="0" Grid.Column="2"/>
+            <ContentControl  DataContext="{Binding BallCalls[2]}" Grid.Row="0" Grid.Column="3"/>
+            <ContentControl  DataContext="{Binding BallCalls[3]}" Grid.Row="0" Grid.Column="4" />
+            <ContentControl  DataContext="{Binding BallCalls[4]}" Grid.Row="0" Grid.Column="5" />
+            <ContentControl  DataContext="{Binding BallCalls[5]}" Grid.Row="0" Grid.Column="6" />
+            <ContentControl  DataContext="{Binding BallCalls[6]}" Grid.Row="0" Grid.Column="7" />
+            <ContentControl  DataContext="{Binding BallCalls[7]}" Grid.Row="0" Grid.Column="8" />
+            <ContentControl  DataContext="{Binding BallCalls[8]}" Grid.Row="0" Grid.Column="9" />
+            <ContentControl DataContext="{Binding BallCalls[9]}" Grid.Row="0" Grid.Column="10" />
+            <ContentControl DataContext="{Binding BallCalls[10]}" Grid.Row="0" Grid.Column="11" />
+            <ContentControl DataContext="{Binding BallCalls[11]}" Grid.Row="0" Grid.Column="12" />
+            <ContentControl DataContext="{Binding BallCalls[12]}" Grid.Row="0" Grid.Column="13" />
+            <ContentControl DataContext="{Binding BallCalls[13]}" Grid.Row="0" Grid.Column="14" />
+            <ContentControl DataContext="{Binding BallCalls[14]}" Grid.Row="0" Grid.Column="15" />
+            
+            <ContentControl DataContext="{Binding BallCalls[15]}" Grid.Row="1" Grid.Column="1" />
+            <ContentControl DataContext="{Binding BallCalls[16]}" Grid.Row="1" Grid.Column="2" />
+            <ContentControl DataContext="{Binding BallCalls[17]}" Grid.Row="1" Grid.Column="3" />
+            <ContentControl DataContext="{Binding BallCalls[18]}" Grid.Row="1" Grid.Column="4" />
+            <ContentControl DataContext="{Binding BallCalls[19]}" Grid.Row="1" Grid.Column="5" />
+            <ContentControl DataContext="{Binding BallCalls[20]}" Grid.Row="1" Grid.Column="6" />
+            <ContentControl DataContext="{Binding BallCalls[21]}" Grid.Row="1" Grid.Column="7" />
+            <ContentControl DataContext="{Binding BallCalls[22]}" Grid.Row="1" Grid.Column="8" />
+            <ContentControl DataContext="{Binding BallCalls[23]}" Grid.Row="1" Grid.Column="9" />
+            <ContentControl DataContext="{Binding BallCalls[24]}" Grid.Row="1" Grid.Column="10" />
+            <ContentControl DataContext="{Binding BallCalls[25]}" Grid.Row="1" Grid.Column="11" />
+            <ContentControl DataContext="{Binding BallCalls[26]}" Grid.Row="1" Grid.Column="12" />
+            <ContentControl DataContext="{Binding BallCalls[27]}" Grid.Row="1" Grid.Column="13" />
+            <ContentControl DataContext="{Binding BallCalls[28]}" Grid.Row="1" Grid.Column="14" />
+            <ContentControl DataContext="{Binding BallCalls[29]}" Grid.Row="1" Grid.Column="15" />
+
+            <ContentControl DataContext="{Binding BallCalls[30]}" Grid.Row="2" Grid.Column="1" />
+            <ContentControl DataContext="{Binding BallCalls[31]}" Grid.Row="2" Grid.Column="2" />
+            <ContentControl DataContext="{Binding BallCalls[32]}" Grid.Row="2" Grid.Column="3" />
+            <ContentControl DataContext="{Binding BallCalls[33]}" Grid.Row="2" Grid.Column="4" />
+            <ContentControl DataContext="{Binding BallCalls[34]}" Grid.Row="2" Grid.Column="5" />
+            <ContentControl DataContext="{Binding BallCalls[35]}" Grid.Row="2" Grid.Column="6" />
+            <ContentControl DataContext="{Binding BallCalls[36]}" Grid.Row="2" Grid.Column="7" />
+            <ContentControl DataContext="{Binding BallCalls[37]}" Grid.Row="2" Grid.Column="8" />
+            <ContentControl DataContext="{Binding BallCalls[38]}" Grid.Row="2" Grid.Column="9" />
+            <ContentControl DataContext="{Binding BallCalls[39]}" Grid.Row="2" Grid.Column="10" />
+            <ContentControl DataContext="{Binding BallCalls[40]}" Grid.Row="2" Grid.Column="11" />
+            <ContentControl DataContext="{Binding BallCalls[41]}" Grid.Row="2" Grid.Column="12" />
+            <ContentControl DataContext="{Binding BallCalls[42]}" Grid.Row="2" Grid.Column="13" />
+            <ContentControl DataContext="{Binding BallCalls[43]}" Grid.Row="2" Grid.Column="14" />
+            <ContentControl DataContext="{Binding BallCalls[44]}" Grid.Row="2" Grid.Column="15" />
+
+            <ContentControl DataContext="{Binding BallCalls[45]}" Grid.Row="3" Grid.Column="1" />
+            <ContentControl DataContext="{Binding BallCalls[46]}" Grid.Row="3" Grid.Column="2" />
+            <ContentControl DataContext="{Binding BallCalls[47]}" Grid.Row="3" Grid.Column="3" />
+            <ContentControl DataContext="{Binding BallCalls[48]}" Grid.Row="3" Grid.Column="4" />
+            <ContentControl DataContext="{Binding BallCalls[49]}" Grid.Row="3" Grid.Column="5" />
+            <ContentControl DataContext="{Binding BallCalls[50]}" Grid.Row="3" Grid.Column="6" />
+            <ContentControl DataContext="{Binding BallCalls[51]}" Grid.Row="3" Grid.Column="7" />
+            <ContentControl DataContext="{Binding BallCalls[52]}" Grid.Row="3" Grid.Column="8" />
+            <ContentControl DataContext="{Binding BallCalls[53]}" Grid.Row="3" Grid.Column="9" />
+            <ContentControl DataContext="{Binding BallCalls[54]}" Grid.Row="3" Grid.Column="10" />
+            <ContentControl DataContext="{Binding BallCalls[55]}" Grid.Row="3" Grid.Column="11" />
+            <ContentControl DataContext="{Binding BallCalls[56]}" Grid.Row="3" Grid.Column="12" />
+            <ContentControl DataContext="{Binding BallCalls[57]}" Grid.Row="3" Grid.Column="13" />
+            <ContentControl DataContext="{Binding BallCalls[58]}" Grid.Row="3" Grid.Column="14" />
+            <ContentControl DataContext="{Binding BallCalls[59]}" Grid.Row="3" Grid.Column="15" />
+
+            <ContentControl DataContext="{Binding BallCalls[60]}" Grid.Row="4" Grid.Column="1" />
+            <ContentControl DataContext="{Binding BallCalls[61]}" Grid.Row="4" Grid.Column="2" />
+            <ContentControl DataContext="{Binding BallCalls[62]}" Grid.Row="4" Grid.Column="3" />
+            <ContentControl DataContext="{Binding BallCalls[63]}" Grid.Row="4" Grid.Column="4" />
+            <ContentControl DataContext="{Binding BallCalls[64]}" Grid.Row="4" Grid.Column="5" />
+            <ContentControl DataContext="{Binding BallCalls[65]}" Grid.Row="4" Grid.Column="6" />
+            <ContentControl DataContext="{Binding BallCalls[66]}" Grid.Row="4" Grid.Column="7" />
+            <ContentControl DataContext="{Binding BallCalls[67]}" Grid.Row="4" Grid.Column="8" />
+            <ContentControl DataContext="{Binding BallCalls[68]}" Grid.Row="4" Grid.Column="9" />
+            <ContentControl DataContext="{Binding BallCalls[69]}" Grid.Row="4" Grid.Column="10" />
+            <ContentControl DataContext="{Binding BallCalls[70]}" Grid.Row="4" Grid.Column="11" />
+            <ContentControl DataContext="{Binding BallCalls[71]}" Grid.Row="4" Grid.Column="12" />
+            <ContentControl DataContext="{Binding BallCalls[72]}" Grid.Row="4" Grid.Column="13" />
+            <ContentControl DataContext="{Binding BallCalls[73]}" Grid.Row="4" Grid.Column="14" />
+            <ContentControl DataContext="{Binding BallCalls[74]}" Grid.Row="4" Grid.Column="15" />
+
+        </Grid>
+    </Border>
+    </Grid>
+</UserControl>
