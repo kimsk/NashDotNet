@@ -9,6 +9,10 @@ Code and PowerPoint slides from my "WinRT and Caliburn.Micro" talk at [Nashville
 + *MinCaliburnMicroApp* : a minimum project that runs Caliburn.Micro. The project is using current NuGet version (1.5.2).
 <br/>
 
+![play screen](https://raw.github.com/kimsk/NashDotNet/master/images/play.png)
+![pattern screen](https://raw.github.com/kimsk/NashDotNet/master/images/patterns.png)
+
+
 ######Credits:
 + [Caliburn.Micro](https://caliburnmicro.codeplex.com/) project
 + InstantBingo background from [Backgrounds Wallpapers HD App](http://apps.microsoft.com/windows/en-us/app/backgrounds-wallpapers/0a8c76aa-0438-47b0-9fe0-a92b860674bc)
